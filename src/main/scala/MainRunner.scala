@@ -26,8 +26,6 @@ object MainRunner extends App {
   val timeBasedExample = new TimeBasedExample
   val result3 = timeBasedExample.run()
 
-  // add results to resultSet before running the job
-  val resultSet = Set(result1, result2, result3)
+  result3.onComplete(_ => system.terminate())
 
-  resultSet.last.onComplete(_ => system.terminate())
 }

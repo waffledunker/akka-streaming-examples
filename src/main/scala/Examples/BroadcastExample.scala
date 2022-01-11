@@ -24,7 +24,7 @@ class BroadcastExample extends RunWrapper {
 
   val writeOutputSink: Sink[Any, Future[Done]] = Sink.foreach(println)
 
-  val graph: RunnableGraph[NotUsed] = RunnableGraph.fromGraph(GraphDSL.create() { implicit b:  =>
+  val graph: RunnableGraph[NotUsed] = RunnableGraph.fromGraph(GraphDSL.create() { implicit b  =>
     import akka.stream.scaladsl.GraphDSL.Implicits._
 
     /**
